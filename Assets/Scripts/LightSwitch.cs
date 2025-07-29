@@ -2,17 +2,40 @@ using UnityEngine;
 
 public class LightSwitch : MonoBehaviour
 {
-    public Light pointLight; // 拖拽要控制的灯进来
+    [System.Serializable]
+    public class LightControl
+    {
+        public Light light;
+        public KeyCode toggleKey;    // 触发控制该灯的按键
+        public bool startOn = true;
+        [HideInInspector] public bool isOn;
+    }
 
-    private bool isOn = true;
+    public LightControl[] controls;
 
-    // 模拟开关触发（测试用，按空格键切换）
+    void Start()
+    {
+        foreach (var lc in controls)
+        {
+            if (lc.light != null)
+            {
+                lc.isOn = lc.startOn;
+                lc.light.enabled = lc.isOn;
+            }
+        }
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))//开关灯的接口
+        foreach (var lc in controls)
         {
-            isOn = !isOn;
-            pointLight.enabled = isOn;
+            if (lc.light != null && Input.GetKeyDown(lc.toggleKey))
+            {
+                lc.isOn = !lc.isOn;
+                lc.light.enabled = lc.isOn;
+                Debug.Log($"Toggled {lc.light.name} to {lc.isOn}");
+            }
         }
     }
 }
+

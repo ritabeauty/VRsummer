@@ -807,6 +807,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -3737833657781493587, guid: 45018c3cf72de1344adc1cc880aeb68d, type: 3}
+--- !u!108 &875956033 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108432822193759220, guid: 1e4f0d9e7dbf221419b0bd0e1286aa16, type: 3}
+  m_PrefabInstance: {fileID: 1456348596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &923299655 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8053827806302908016, guid: 138edd300b607414686f4c88d101c1a1, type: 3}
@@ -1574,6 +1579,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!108 &1456348613 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108565402300665664, guid: 1e4f0d9e7dbf221419b0bd0e1286aa16, type: 3}
+  m_PrefabInstance: {fileID: 1456348596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!108 &1456348615 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 108848226502283946, guid: 1e4f0d9e7dbf221419b0bd0e1286aa16, type: 3}
@@ -1835,7 +1845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1574958094}
-  - component: {fileID: 1574958093}
+  - component: {fileID: 1574958095}
   m_Layer: 0
   m_Name: LightManager
   m_TagString: Untagged
@@ -1843,19 +1853,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1574958093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574958092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a1ed290ba0c5504fb845fd9c6f5a6bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointLight: {fileID: 1456348615}
 --- !u!4 &1574958094
 Transform:
   m_ObjectHideFlags: 0
@@ -1871,6 +1868,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1574958095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574958092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1ed290ba0c5504fb845fd9c6f5a6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls:
+  - light: {fileID: 1456348615}
+    toggleKey: 282
+    startOn: 1
+    isOn: 0
+  - light: {fileID: 875956033}
+    toggleKey: 283
+    startOn: 1
+    isOn: 0
+  - light: {fileID: 1456348613}
+    toggleKey: 284
+    startOn: 1
+    isOn: 0
 --- !u!1 &1585873035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2731250639838910382, guid: 436d84b39ebbb99449cf0c0ed23b24a5, type: 3}
